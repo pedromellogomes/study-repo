@@ -33,11 +33,19 @@ public class Pokemon extends PanacheEntityBase {
 
     @ManyToMany
     @JoinTable(
-            name = "pokemon_ability",
-            joinColumns = @JoinColumn(name = "fk_pokemon_id"),
-            inverseJoinColumns = @JoinColumn(name = "fk_ability_id")
+        name = "pokemon_ability",
+        joinColumns = @JoinColumn(name = "fk_pokemon_id"),
+        inverseJoinColumns = @JoinColumn(name = "fk_ability_id")
     )
     public Set<Ability> abilities;
+
+    @ManyToMany
+    @JoinTable(
+        name = "pokemon_stats",
+        joinColumns = @JoinColumn(name = "fk_pokemon_id"),
+        inverseJoinColumns = @JoinColumn(name = "fk_stat_id")
+    )
+    public Set<Stat> stats;
 
     public static Optional<Pokemon> findById(Long id) {
         return findByIdOptional(id);
@@ -46,4 +54,5 @@ public class Pokemon extends PanacheEntityBase {
     public static Optional<Pokemon> findByIdentifier(String identifier) {
         return find("identifier", identifier).firstResultOptional();
     }
+
 }
