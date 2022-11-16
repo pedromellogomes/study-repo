@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS pokemon_stats(
+CREATE TABLE pokemon_stats(
    "fk_pokemon_id"  BIGINT   NOT NULL REFERENCES pokemon(id)
   ,"fk_stat_id"     BIGINT   NOT NULL REFERENCES stat(id)
   ,"base_stat"      INTEGER  NOT NULL

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS stat(
+CREATE TABLE stat(
    "id"              BIGINT  NOT NULL PRIMARY KEY
   ,"damage_class_id" BIGINT
   ,"identifier"      VARCHAR(15) NOT NULL

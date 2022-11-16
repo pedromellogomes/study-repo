@@ -1,9 +1,9 @@
 CREATE TABLE language_names(
-   "language_id"       BIGINT  NOT NULL REFERENCES languages(id)
+   "fk_language_id"    BIGINT  NOT NULL REFERENCES languages(id)
   ,"local_language_id" BIGINT  NOT NULL
   ,"name"              VARCHAR(16) NOT NULL
 );
-INSERT INTO language_names("language_id","local_language_id","name") VALUES
+INSERT INTO language_names("fk_language_id","local_language_id","name") VALUES
  (1,1,'日本語')
 ,(1,3,'일본어')
 ,(1,5,'Japonais')

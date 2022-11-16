@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS pokemon(
+CREATE TABLE pokemon(
    "id"              BIGINT   NOT NULL PRIMARY KEY
   ,"identifier"      VARCHAR(26) NOT NULL
   ,"species_id"      INTEGER  NOT NULL

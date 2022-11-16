@@ -1,9 +1,9 @@
 CREATE TABLE ability_names(
-   ability_id        BIGINT  NOT NULL REFERENCES ability(id)
-  ,local_language_id BIGINT  NOT NULL REFERENCES languages(id)
-  ,name              VARCHAR(16) NOT NULL
+   "fk_ability_id"     BIGINT  NOT NULL REFERENCES ability(id)
+  ,"local_language_id" BIGINT  NOT NULL REFERENCES languages(id)
+  ,"name"              VARCHAR(16) NOT NULL
 );
-INSERT INTO ability_names(ability_id,local_language_id,name) VALUES
+INSERT INTO ability_names("fk_ability_id","local_language_id","name") VALUES
  (1,1,'あくしゅう')
 ,(1,3,'악취')
 ,(1,4,'惡臭')
