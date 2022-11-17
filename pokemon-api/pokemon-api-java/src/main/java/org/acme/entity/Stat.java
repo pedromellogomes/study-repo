@@ -21,4 +21,5 @@ public class Stat extends PanacheEntityBase {
 
     @Column(name = "game_index")
     public Integer gameIndex;
+
 }
