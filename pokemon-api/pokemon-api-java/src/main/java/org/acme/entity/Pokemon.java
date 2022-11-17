@@ -39,19 +39,14 @@ public class Pokemon extends PanacheEntityBase {
     )
     public Set<Ability> abilities;
 
-    @ManyToMany
-    @JoinTable(
-        name = "pokemon_stats",
-        joinColumns = @JoinColumn(name = "fk_pokemon_id"),
-        inverseJoinColumns = @JoinColumn(name = "fk_stat_id")
+    @OneToMany(
+        mappedBy = "fkPokemonId",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true
     )
-    public Set<Stat> stats;
+    public Set<PokemonStats> stats;
 
-    public static Optional<Pokemon> findById(Long id) {
-        return findByIdOptional(id);
-    }
-
-    public static Optional<Pokemon> findByIdentifier(String identifier) {
+    public static Optional<Pokemon> findByIdentifierOptional(String identifier) {
         return find("identifier", identifier).firstResultOptional();
     }
 
