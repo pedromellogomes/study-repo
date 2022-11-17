@@ -26,7 +26,8 @@ public class PokemonResource {
     @GET
     @Path("{identifier}")
     public Response getByIdentifier(String identifier) {
-        return Response.ok(pokemonService.findByIdentifier(identifier)).build();
+        var pokemon = pokemonService.findByIdentifier(identifier);
+        return Response.ok(pokemon).build();
     }
 
 }
