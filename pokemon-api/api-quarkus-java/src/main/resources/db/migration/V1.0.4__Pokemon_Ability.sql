@@ -1,6 +1,6 @@
 CREATE TABLE pokemon_ability(
-   "fk_pokemon_id" BIGINT  NOT NULL REFERENCES pokemon(id)
-  ,"fk_ability_id" BIGINT  NOT NULL REFERENCES ability(id)
+   "fk_pokemon_id" BIGINT  NOT NULL REFERENCES pokemon("id")
+  ,"fk_ability_id" BIGINT  NOT NULL REFERENCES ability("id")
   ,"is_hidden"  BOOLEAN  NOT NULL
   ,"slot"       INTEGER  NOT NULL
 );

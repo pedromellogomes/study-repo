@@ -1,5 +1,5 @@
 CREATE TABLE language_names(
-   "fk_language_id"    BIGINT  NOT NULL REFERENCES languages(id)
+   "fk_language_id"    BIGINT  NOT NULL REFERENCES languages("id")
   ,"local_language_id" BIGINT  NOT NULL
   ,"name"              VARCHAR(16) NOT NULL
 );

@@ -1,6 +1,6 @@
 CREATE TABLE ability_names(
-   "fk_ability_id"     BIGINT  NOT NULL REFERENCES ability(id)
-  ,"local_language_id" BIGINT  NOT NULL REFERENCES languages(id)
+   "fk_ability_id"     BIGINT  NOT NULL REFERENCES ability("id")
+  ,"local_language_id" BIGINT  NOT NULL REFERENCES languages("id")
   ,"name"              VARCHAR(16) NOT NULL
 );
 INSERT INTO ability_names("fk_ability_id","local_language_id","name") VALUES
