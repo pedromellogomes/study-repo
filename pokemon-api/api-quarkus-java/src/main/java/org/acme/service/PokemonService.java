@@ -7,15 +7,16 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class PokemonService {
 
-    public Pokemon findByIdOptionalOrThrow(Long id) {
+    public Pokemon findByIdOrThrow(Long id) {
         return Pokemon
                 .findByIdOptional(id)
                 .map(Pokemon.class::cast)
                 .orElseThrow(RuntimeException::new);
     }
-    public Pokemon findByIdentifier(String identifier) {
+    public Pokemon findByIdentifierOrThrow(String identifier) {
         return Pokemon
                 .findByIdentifierOptional(identifier)
+                .map(Pokemon.class::cast)
                 .orElseThrow(RuntimeException::new);
     }
 

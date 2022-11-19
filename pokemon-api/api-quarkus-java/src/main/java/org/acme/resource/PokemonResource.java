@@ -20,13 +20,14 @@ public class PokemonResource {
     @GET
     @Path("{id}")
     public Response getById(Long id) {
-        return Response.ok(Pokemon.findById(id)).build();
+        var pokemon = pokemonService.findByIdOrThrow(id);
+        return Response.ok(pokemon).build();
     }
 
     @GET
-    @Path("{identifier}")
+    @Path("identifier/{identifier}")
     public Response getByIdentifier(String identifier) {
-        var pokemon = pokemonService.findByIdentifier(identifier);
+        var pokemon = pokemonService.findByIdentifierOrThrow(identifier);
         return Response.ok(pokemon).build();
     }
 
