@@ -1,0 +1,6 @@
+# building folders
+\target
+
+# IDE files and folders
+\.idea
+*.iml
